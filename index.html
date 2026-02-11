@@ -1,0 +1,58 @@
+<section class="banner-eterea">
+  <div class="contenedor-imagen">
+    <img src="joyas italianas.jpg" alt="Joyas Etérea" class="imagen-joya">
+    
+    <div class="texto-overlay">
+      <h1 class="marca-texto">ETÉREA</h1>
+    </div>
+  </div>
+</section>
+
+<style>
+  .banner-eterea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .contenedor-imagen {
+    position: relative; /* Esto permite que el texto flote sobre la foto */
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .imagen-joya {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .texto-overlay {
+    position: absolute;
+    top: 15%; /* Esto sube la frase al lugar que me pediste */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+
+  .marca-texto {
+    color: white;
+    font-family: serif;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6); /* Sombra para que se lea sobre la plata */
+    margin: 0;
+  }
+
+  /* Ajuste para que en el celular se vea bien */
+  @media (max-width: 600px) {
+    .marca-texto {
+      font-size: 1.5rem;
+      top: 10%;
+    }
+  }
+</style>
