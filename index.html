@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etérea - Joyería de Plata 925</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 1. ESTILO BASE: Verde Esmeralda en todo el sitio */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #004d2c; 
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        /* Menú superior fino */
+        nav {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav a { color: rgba(255, 255, 255, 0.8); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+        /* 2. ENCABEZADO: Con tu imagen 'joyas italianas.jpg' */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(rgba(0, 77, 44, 0.3), rgba(0, 77, 44, 0.3)), url('joyas italianas.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #0055ff; /* Detalle Azul Francia */
+        }
+        .titulo-marca { 
+            font-size: 4rem; 
+            letter-spacing: 15px; 
+            font-weight: 300; 
+            margin: 0; 
+            text-transform: uppercase; 
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6); 
+        }
+
+        /* 3. CATÁLOGO INTEGRADO */
+        .seccion-catalogo { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        
+        .categoria-bloque { margin-bottom: 80px; text-align: left; }
+        
+        .titulo-categoria {
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #0055ff;
+            display: inline-block;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+        }
+
+        .galeria-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tarjeta-joya {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 85, 255, 0.3);
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+        .tarjeta-joya:hover { border-color: #0055ff; transform: translateY(-5px); }
+
+        .foto-producto { width: 100%; height: auto; border-radius: 2px; }
+        .nombre-producto { margin-top: 15px; font-size: 1rem; letter-spacing: 2px; }
+
+        /* 4. BOTÓN WHATSAPP MENDOZA */
+        .btn-whatsapp {
+            display: inline-block;
+            margin: 40px 0;
+            padding: 18px 45px;
+            border: 1px solid #0055ff;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            background: rgba(0, 85, 255, 0.1);
+            transition: 0.4s;
+        }
+        .btn-whatsapp:hover { background: #0055ff; }
+
+        footer { padding: 50px; font-size: 0.7rem; letter-spacing: 2px; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Esencia</a>
+        <a href="#">Colección</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="titulo-marca">ETÉREA</h1>
+        <p style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Joyería de Plata 925</p>
+    </header>
+
+    <section class="seccion-catalogo">
+        
+        <div class="categoria-bloque">
+            <h2 class="titulo-categoria">Aros</h2>
+            <div class="galeria-productos">
+                <div class="tarjeta-joya">
+                    <img src="aro-1.jpg" alt="Aros Etérea" class="foto-producto">
+                    <p class="nombre-producto">Argollas de Plata</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria-bloque">
+            <h2 class="titulo-categoria">Cadenas</h2>
+            <div class="galeria-productos">
+                <div class="tarjeta-joya">
+                    <img src="cadena-1.jpg" alt="Cadenas Etérea" class="foto-producto">
+                    <p class="nombre-producto">Eslabón Italiano</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria-bloque">
+            <h2 class="titulo-categoria">Collares</h2>
+            <div class="galeria-productos">
+                <div class="tarjeta-joya">
+                    <img src="collar-1.jpg" alt="Collares Etérea" class="foto-producto">
+                    <p class="nombre-producto">Gargantilla Plata 925</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria-bloque">
+            <h2 class="titulo-categoria">Pulseras</h2>
+            <div class="galeria-productos">
+                <div class="tarjeta-joya">
+                    <img src="pulsera-1.jpg" alt="Pulseras Etérea" class="foto-producto">
+                    <p class="nombre-producto">Pulsera de Plata</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/5492615739130" class="btn-whatsapp">Consultar por WhatsApp</a>
+
+    </section>
+
+    <footer>
+        &copy; 2026 ETÉREA - MENDOZA, ARGENTINA
+    </footer>
+
+</body>
+</html>
