@@ -1,0 +1,101 @@
+<section class="contenedor-catalogo">
+    
+    <div class="categoria">
+        <h2 class="titulo-categoria">Aros</h2>
+        <div class="galeria-productos">
+            <div class="tarjeta-joya">
+                <img src="aro-1.jpg" alt="Aros Etérea" class="foto-producto">
+                <p class="detalle-joya">Argollas de Plata 925</p>
+            </div>
+            <div class="tarjeta-joya">
+                <img src="aro-2.jpg" alt="Aros Etérea" class="foto-producto">
+                <p class="detalle-joya">Abridores con Cristal</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h2 class="titulo-categoria">Cadenas</h2>
+        <div class="galeria-productos">
+            <div class="tarjeta-joya">
+                <img src="cadena-italiana.jpg" alt="Cadena Italiana" class="foto-producto">
+                <p class="detalle-joya">Eslabón Italiano Fino</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h2 class="titulo-categoria">Collares</h2>
+        <div class="galeria-productos">
+            <div class="tarjeta-joya">
+                <img src="collar-dije.jpg" alt="Collar Etérea" class="foto-producto">
+                <p class="detalle-joya">Gargantilla con Dije Central</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h2 class="titulo-categoria">Pulseras</h2>
+        <div class="galeria-productos">
+            <div class="tarjeta-joya">
+                <img src="pulsera-plata.jpg" alt="Pulsera Etérea" class="foto-producto">
+                <p class="detalle-joya">Esclava de Plata Maciza</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    .contenedor-catalogo {
+        background-color: #004d2c; /* Verde Esmeralda */
+        padding: 50px 20px;
+    }
+
+    .titulo-categoria {
+        color: white;
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #0055ff; /* Azul Francia */
+        display: inline-block;
+        margin-bottom: 30px;
+        padding-bottom: 5px;
+    }
+
+    .galeria-productos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto 60px;
+    }
+
+    .tarjeta-joya {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 85, 255, 0.3); /* Borde Azul Francia sutil */
+        padding: 15px;
+        border-radius: 4px;
+        transition: 0.3s ease;
+    }
+
+    .tarjeta-joya:hover {
+        transform: translateY(-5px);
+        border-color: #0055ff;
+    }
+
+    .foto-producto {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 2px;
+    }
+
+    .detalle-joya {
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        letter-spacing: 1px;
+    }
+</style>
