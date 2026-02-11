@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etérea - Joyería</title>
+    <style>
+        /* 1. Fondo Verde Esmeralda */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #008f39; /* Verde Esmeralda */
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        /* Contenedor Principal */
+        .header-eterea {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* Banner de Imagen (donde va tu collar y anillo) */
+        .contenedor-imagen {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 3px solid #0055ff; /* Detalle en Azul Francia */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .imagen-joya {
+            width: 100%;
+            display: block;
+        }
+
+        /* Título Etérea sobre la imagen */
+        .titulo-marca {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        /* 2. Botón de Contacto (Azul Francia) */
+        .boton-contacto {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #0055ff; /* Azul Francia */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .boton-contacto:hover {
+            background-color: #0044cc;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-eterea">
+        <div class="contenedor-imagen">
+            <img src="1000413087.jpg" alt="Joyas Etérea" class="imagen-joya">
+            <h1 class="titulo-marca">ETÉREA</h1>
+        </div>
+
+        <a href="https://wa.me/5492615739130" class="boton-contacto">
+            Contactar por WhatsApp
+        </a>
+    </header>
+
+</body>
+</html>
