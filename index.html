@@ -1,0 +1,47 @@
+<div class="contenedor-principal">
+    <div class="marco-imagen">
+        <img src="NOMBRE_DE_TU_ARCHIVO_AQUÍ.jpg" alt="Joyas Etérea" class="foto-joyas">
+        
+        <div class="texto-superpuesto">
+            <p class="tu-propia-frase">ETÉREA</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contenedor-principal {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .marco-imagen {
+        position: relative; /* Clave para que el texto suba a la imagen */
+        max-width: 900px;
+    }
+
+    .foto-joyas {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+    }
+
+    .texto-superpuesto {
+        position: absolute;
+        top: 15%; /* Esto la sube al lugar que querías */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .tu-propia-frase {
+        color: white;
+        font-family: serif;
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+        text-shadow: 1px 1px 10px rgba(0,0,0,0.5); /* Sombra para que se lea */
+        margin: 0;
+    }
+</style>
