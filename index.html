@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etérea - Joyería Fina</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f9f9f9; /* Fondo claro para que resalte la plata */
+            font-family: 'Times New Roman', serif;
+            color: #333;
+        }
+
+        /* Detalle sutil en Verde Esmeralda en la parte superior */
+        .linea-decorativa {
+            height: 4px;
+            background: linear-gradient(90deg, #008f39, #0055ff);
+            width: 100%;
+        }
+
+        /* Contenedor de la Imagen Principal */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .img-principal {
+            width: 100%;
+            display: block;
+        }
+
+        /* Texto ETÉREA integrado con elegancia */
+        .texto-sobre-foto {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2.5rem;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+
+        /* Secciones del Catálogo (Aros, Cadenas, etc.) */
+        .secciones-joyas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .item-joya {
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .item-joya h3 {
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #008f39; /* Toque Verde Esmeralda */
+        }
+
+        /* Botón de Contacto Fino */
+        .btn-contacto {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 12px 35px;
+            border: 1px solid #0055ff; /* Detalle Azul Francia */
+            color: #0055ff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: 0.4s;
+        }
+
+        .btn-contacto:hover {
+            background-color: #0055ff;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="linea-decorativa"></div>
+
+    <header class="hero-container">
+        <img src="1000413087.jpg" alt="Etérea Joyas" class="img-principal">
+        <h1 class="texto-sobre-foto">ETÉREA</h1>
+    </header>
+
+    <div class="secciones-joyas">
+        <div class="item-joya"><h3>Aros</h3></div>
+        <div class="item-joya"><h3>Cadenas</h3></div>
+        <div class="item-joya"><h3>Pulseras</h3></div>
+        <div class="item-joya"><h3>Anillos</h3></div>
+    </div>
+
+    <a href="https://wa.me/5492615739130" class="btn-contacto">Consultar por WhatsApp</a>
+
+    <footer>
+        &copy; 2026 ETÉREA - MENDOZA, ARGENTINA
+    </footer>
+
+</body>
+</html>
