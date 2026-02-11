@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etérea - Joyería Fina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,700;1,300&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #002d1a; /* Cimiento: Verde Bosque Muy Oscuro */
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Nav (Cimiento Sagrado) */
+        nav {
+            padding: 25px 40px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 45, 26, 0.95);
+            z-index: 1000;
+        }
+        .plata-code-nav { margin-right: auto; font-size: 0.8rem; letter-spacing: 2px; }
+        nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+        /* Hero (Cimiento Sagrado) */
+        .hero {
+            height: 600px;
+            background: linear-gradient(rgba(0, 45, 26, 0.4), rgba(0, 45, 26, 0.4)), url('joyas italianas.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .titulo-marca { 
+            font-size: 5rem; 
+            letter-spacing: 20px; 
+            font-weight: 300; 
+            margin: 0; 
+            text-transform: uppercase;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8), 0px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .sello-hero { letter-spacing: 8px; color: #ffffff; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; text-align: center; }
+
+        /* Esencia (Cimiento Sagrado: Significado en Cursiva Fina) */
+        .titulo-esencia { font-size: 2.2rem; letter-spacing: 8px; margin-bottom: 40px; text-transform: uppercase; font-weight: 300; }
+        .esencia-texto {
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 1.7rem; 
+            line-height: 1.8;
+            font-style: italic; 
+            max-width: 850px;
+            margin: 0 auto 100px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* COLLAGE DE COLECCIÓN (Sin botones) */
+        .titulo-seccion { font-size: 1.8rem; letter-spacing: 10px; border-bottom: 2px solid #0055ff; display: inline-block; padding-bottom: 10px; margin-bottom: 50px; }
+        
+        .grid-collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 100px;
+        }
+
+        .item-collage {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-decoration: none;
+            color: white;
+        }
+
+        .item-collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .item-collage:hover img { transform: scale(1.05); }
+
+        .overlay-collage {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .item-collage:hover .overlay-collage { background: rgba(0, 85, 255, 0.2); }
+        
+        .texto-collage { 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            font-size: 1.2rem; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* GALERÍAS DETALLADAS (Aquí sí están los botones) */
+        .seccion-galeria { 
+            padding: 80px 0; 
+            display: none; /* Se ocultan hasta que se activan */
+            border-top: 1px solid rgba(255,255,255,0.1);
+        } 
+        
+        .seccion-galeria:target { display: block; } /* Cimiento: Función de apertura */
+
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tarjeta-detalle {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 85, 255, 0.2);
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .foto-detalle { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+        
+        .info-detalle { margin: 15px 0; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+        .sello-plata { color: #ffffff; font-size: 0.7rem; display: block; margin-top: 5px; opacity: 0.7; }
+
+        .btn-consultar-final {
+            display: block;
+            border: 1px solid #0055ff;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            background: rgba(0, 85, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .btn-consultar-final:hover { background: #0055ff; }
+
+        .btn-cerrar {
+            display: inline-block;
+            margin-top: 40px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        footer { padding: 60px; font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="plata-code-nav">PLATA 925</span>
+        <a href="#inicio">Inicio</a>
+        <a href="#esencia">Esencia</a>
+        <a href="#coleccion">Colección</a>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <h1 class="titulo-marca">ETÉREA</h1>
+        <span class="sello-hero">JOYAS ITALIANAS | PLATA 925</span>
+    </header>
+
+    <div class="container">
+        <section id="esencia">
+            <h2 class="titulo-esencia">Nuestra Esencia</h2>
+            <div class="esencia-texto">
+                <p>Etérea nace de la búsqueda de lo sublime. Cada una de nuestras piezas en Plata 925 es una extensión de la belleza que trasciende lo físico, diseñada para brillar con la intensidad de lo eterno.</p>
+            </div>
+        </section>
+
+        <section id="coleccion">
+            <h2 class="titulo-seccion">Colección</h2>
+            <div class="grid-collage">
+                <a href="#galeria-aros" class="item-collage">
+                    <img src="aro-1.jpg" alt="Aros Etérea">
+                    <div class="overlay-collage"><span class="texto-collage">Aros</span></div>
+                </a>
+                <a href="#galeria-cadenas" class="item-collage">
+                    <img src="cadena-1.jpg" alt="Cadenas Etérea">
+                    <div class="overlay-collage"><span class="texto-collage">Cadenas</span></div>
+                </a>
+                <a href="#galeria-collares" class="item-collage">
+                    <img src="collar-1.jpg" alt="Collares Etérea">
+                    <div class="overlay-collage"><span class="texto-collage">Collares</span></div>
+                </a>
+                <a href="#galeria-pulseras" class="item-collage">
+                    <img src="pulsera-1.jpg" alt="Pulseras Etérea">
+                    <div class="overlay-collage"><span class="texto-collage">Pulseras</span></div>
+                </a>
+            </div>
+        </section>
+
+        <div id="galeria-aros" class="seccion-galeria">
+            <h2 class="titulo-seccion">Galería de Aros</h2>
+            <div class="grid-galeria">
+                <div class="tarjeta-detalle">
+                    <img src="aro-1.jpg" class="foto-detalle">
+                    <div class="info-detalle">Aros Clásicos <span class="sello-plata">Plata 925</span></div>
+                    <a href="https://wa.me/2615739130?text=Hola!%20Consulto%20por%20los%20Aros" class="btn-consultar-final">CONSULTAR</a>
+                </div>
+            </div>
+            <a href="#coleccion" class="btn-cerrar">↑ Volver al Collage</a>
+        </div>
+
+        <div id="galeria-cadenas" class="seccion-galeria">
+            <h2 class="titulo-seccion">Galería de Cadenas</h2>
+            <div class="grid-galeria">
+                <div class="tarjeta-detalle">
+                    <img src="cadena-1.jpg" class="foto-detalle">
+                    <div class="info-detalle">Cadena Italiana <span class="sello-plata">Plata 925</span></div>
+                    <a href="https://wa.me/2615739130?text=Hola!%20Consulto%20por%20la%20Cadena" class="btn-consultar-final">CONSULTAR</a>
+                </div>
+            </div>
+            <a href="#coleccion" class="btn-cerrar">↑ Volver al Collage</a>
+        </div>
+
+        <div id="galeria-collares" class="seccion-galeria">
+            <h2 class="titulo-seccion">Galería de Collares</h2>
+            <div class="grid-galeria">
+                <div class="tarjeta-detalle">
+                    <img src="collar-1.jpg" class="foto-detalle">
+                    <div class="info-detalle">Collar de Plata <span class="sello-plata">Plata 925</span></div>
+                    <a href="https://wa.me/2615739130?text=Hola!%20Consulto%20por%20el%20Collar" class="btn-consultar-final">CONSULTAR</a>
+                </div>
+            </div>
+            <a href="#coleccion" class="btn-cerrar">↑ Volver al Collage</a>
+        </div>
+
+        <div id="galeria-pulseras" class="seccion-galeria">
+            <h2 class="titulo-seccion">Galería de Pulseras</h2>
+            <div class="grid-galeria">
+                <div class="tarjeta-detalle">
+                    <img src="pulsera-1.jpg" class="foto-detalle">
+                    <div class="info-detalle">Pulsera Fina <span class="sello-plata">Plata 925</span></div>
+                    <a href="https://wa.me/2615739130?text=Hola!%20Consulto%20por%20la%20Pulsera" class="btn-consultar-final">CONSULTAR</a>
+                </div>
+            </div>
+            <a href="#coleccion" class="btn-cerrar">↑ Volver al Collage</a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 ETÉREA - MENDOZA, ARGENTINA | PLATA 925
+    </footer>
+
+</body>
+</html>
